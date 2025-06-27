@@ -1,2 +1,2 @@
 # walmart-hack
-i have created 4 branches for all of us. 
+i have created 4 branches (of your name) for all of us. 
