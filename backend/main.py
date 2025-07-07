@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from routers import simulation
 # from fastapi.middleware.cors import CORSMiddleware
 # from api.endpoints import router as api_router
 
@@ -17,6 +18,10 @@ app = FastAPI(title="LiveExpiry+ Backend")
 # app.include_router(api_router)
 
 # Health Check Endpoint
+
+app.include_router(simulation.router)
+
+
 @app.get("/")
 async def root():
     print ("Health check endpoint hit")
