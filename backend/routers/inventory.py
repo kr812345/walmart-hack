@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException
 from typing import List
 from backend.services import inventory as inventory_service
 from backend.schema.schema_inventory import InventoryItem, InventoryCreate, InventoryUpdate
+from backend.services.recommendation import recommend_inventory_actions
 
 router = APIRouter()
 
@@ -66,7 +67,7 @@ def classify_inventory():
 def recommend_inventory():
     try:
         items = inventory_service.get_all_inventory()
-        recommendations = inventory_service.recommend_inventory_actions(items)
+        recommendations = recommend_inventory_actions(items)
         return {"recommendations": recommendations}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e)) 
