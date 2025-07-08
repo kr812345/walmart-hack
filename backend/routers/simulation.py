@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from simulator.advanced_simulatorsimulator import AdvancedInventorySimulator
+from simulator import AdvancedInventorySimulator
 from services.simulator_service import simulator, get_inventory_df, push_inventory_to_sheet
 
 router = APIRouter()
