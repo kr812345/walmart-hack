@@ -1,4 +1,8 @@
 from fastapi import FastAPI
+from backend.routers import simulation
+from backend.routers import inventory
+from backend.routers import recommendation
+from backend.routers import co2
 # from fastapi.middleware.cors import CORSMiddleware
 # from api.endpoints import router as api_router
 
@@ -17,6 +21,13 @@ app = FastAPI(title="LiveExpiry+ Backend")
 # app.include_router(api_router)
 
 # Health Check Endpoint
+
+app.include_router(simulation.router)
+app.include_router(inventory.router)
+app.include_router(recommendation.router)
+app.include_router(co2.router)
+
+
 @app.get("/")
 async def root():
     print ("Health check endpoint hit")

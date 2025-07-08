@@ -72,5 +72,3 @@ venv.bak/
 # Logs
 *.log
 
-# CSVs and datasets
-shared_assets/*.csv
