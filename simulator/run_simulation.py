@@ -6,7 +6,7 @@ if __name__ == "__main__":
     sim = AdvancedInventorySimulator('../shared_assets/expanded_dataset_walmart_final_priced.csv')
 
     # Run simulation for 5 days (you can change this to test longer periods)
-    for _ in range(5):
+    for _ in range(1):
         sim.simulate_day()
         time.sleep(200)
 
