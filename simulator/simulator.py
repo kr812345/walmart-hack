@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 from datetime import datetime, timedelta
-from google_sheets_connector import connect_to_sheet
+from .google_sheets_connector import connect_to_sheet
 
 class AdvancedInventorySimulator:
     def __init__(self, csv_path):

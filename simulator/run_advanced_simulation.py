@@ -7,7 +7,7 @@ if __name__ == "__main__":
 
     spreadsheet_id = '1bpKO6Zo8ce8iVykC7TSWwteSFYujJBJY1wv2hffHcMI'
 
-    for _ in range(5):  # Simulate 5 days
+    for _ in range(1):  # Simulate 5 days
         sim.simulate_day()
         # time.sleep(200)
         sim.push_to_google_sheet(spreadsheet_id)
