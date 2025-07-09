@@ -1,12 +1,14 @@
 import pandas as pd
 import random
+import joblib
 from datetime import datetime, timedelta
 from .google_sheets_connector import connect_to_sheet
 
 class AdvancedInventorySimulator:
-    def __init__(self, csv_path):
+    def __init__(self, csv_path, model_path = '..models/xgb_model.pkl'):
         self.csv_path = csv_path
         self.df = pd.read_csv(csv_path)
+        self.model = joblib.load(model_path)
         self.current_date = datetime.now().date()
 
     def simulate_day(self):
@@ -70,3 +72,5 @@ class AdvancedInventorySimulator:
 
         sheet.update(sheet_data)
         print(f"Live data pushed to Google Sheet: {sheet_id}")
+    
+    
