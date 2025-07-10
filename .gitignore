@@ -72,3 +72,4 @@ venv.bak/
 # Logs
 *.log
 
+/venv/
